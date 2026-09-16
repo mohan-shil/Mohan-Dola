@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The wedding invitation of Mohan and Diya." />
+  <title>Mohan &amp; Diya | Save the Date</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <section class="hero" id="top">
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="monogram" href="#top" aria-label="Mohan and Diya home">M<span>&amp;</span>D</a>
+        <div class="nav-links">
+          <a href="#story">Our story</a>
+          <a href="#details">The day</a>
+          <a href="#rsvp">RSVP</a>
+        </div>
+      </nav>
+
+      <div class="hero-content wrap">
+        <p class="eyebrow">Together with their families</p>
+        <h1>Mohan <em>&amp;</em> Diya</h1>
+        <p class="hero-copy">invite you to celebrate the beginning<br />of their forever.</p>
+        <div class="hero-date">
+          <span>Sunday</span><i></i><span>18 October 2026</span><i></i><span>Jaipur, Rajasthan</span>
+        </div>
+        <a class="button button-light" href="#details">Explore the invitation <span>↓</span></a>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="scroll-note">Scroll to discover <span>↓</span></div>
+    </section>
+
+    <section class="intro section-pad" id="story">
+      <div class="wrap narrow intro-grid">
+        <p class="section-label">01 / A little about us</p>
+        <div>
+          <h2>Two paths,<br /><em>one beautiful</em> beginning.</h2>
+          <p class="body-copy">From a chance hello to a thousand small memories, our story has always felt like a little bit of magic. Now, we are making it official with the people who make our world complete.</p>
+          <p class="signature">With love,<br /><span>Mohan &amp; Diya</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="details section-pad" id="details">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-label">02 / Join us</p>
+          <h2>The day we’ve<br /><em>been dreaming of.</em></h2>
+        </div>
+        <div class="event-grid">
+          <article class="event-card">
+            <p class="event-number">01</p>
+            <p class="event-type">The ceremony</p>
+            <h3>Phere</h3>
+            <p class="event-time">10:30 <span>in the morning</span></p>
+            <p class="event-place">Samode Haveli<br />Jaipur, Rajasthan</p>
+            <a class="text-link" href="https://maps.google.com/?q=Samode+Haveli+Jaipur" target="_blank" rel="noreferrer">View on map <span>↗</span></a>
+          </article>
+          <article class="event-card featured-event">
+            <p class="event-number">02</p>
+            <p class="event-type">The celebration</p>
+            <h3>Reception</h3>
+            <p class="event-time">7:00 <span>in the evening</span></p>
+            <p class="event-place">The Leela Palace<br />Jaipur, Rajasthan</p>
+            <a class="text-link" href="https://maps.google.com/?q=The+Leela+Palace+Jaipur" target="_blank" rel="noreferrer">View on map <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown section-pad">
+      <div class="wrap countdown-inner">
+        <p class="section-label">The countdown begins</p>
+        <div class="timer" aria-label="Countdown to the wedding">
+          <div><strong id="days">--</strong><span>days</span></div><i></i>
+          <div><strong id="hours">--</strong><span>hours</span></div><i></i>
+          <div><strong id="minutes">--</strong><span>minutes</span></div><i></i>
+          <div><strong id="seconds">--</strong><span>seconds</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp section-pad" id="rsvp">
+      <div class="wrap rsvp-inner">
+        <p class="section-label">03 / We hope you can make it</p>
+        <h2>Come for the love,<br /><em>stay for the dancing.</em></h2>
+        <p class="body-copy">Your presence is the only present we need. Please let us know if you’ll be joining us by 01 September 2026.</p>
+        <button class="button button-dark" id="rsvpButton" type="button">Confirm your attendance <span>→</span></button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <span class="monogram">M<span>&amp;</span>D</span>
+        <p>Made with love for our favourite people.</p>
+        <a href="#top" aria-label="Back to top">↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <div class="modal" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close RSVP form">×</button>
+      <p class="section-label">RSVP / 2026</p>
+      <h2 id="modalTitle">Will we see<br /><em>you there?</em></h2>
+      <form id="rsvpForm">
+        <label>Your name<input required type="text" name="name" placeholder="Aarav Sharma" /></label>
+        <label>Will you join us?
+          <select name="attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select>
+        </label>
+        <button class="button button-dark" type="submit">Send RSVP <span>→</span></button>
+      </form>
+      <p class="form-message" id="formMessage" aria-live="polite"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
