@@ -1,5 +1,15 @@
 const weddingDate = new Date("2026-10-18T10:30:00+05:30").getTime();
 
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("is-visible");
+    observer.unobserve(entry.target);
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal:not(.is-visible)").forEach((element) => revealObserver.observe(element));
+
 function updateCountdown() {
   const distance = Math.max(0, weddingDate - Date.now());
   const units = {

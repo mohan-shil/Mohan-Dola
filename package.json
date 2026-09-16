@@ -2,6 +2,19 @@
   "name": "mohan-diya-wedding-card",
   "version": "1.0.0",
   "private": true,
+  "description": "Virtual Wedding Card of Mohan &amp; Dola",
+  "homepage": "https://github.com/mohan-shil/Mohan-Dola#readme",
+  "bugs": {
+    "url": "https://github.com/mohan-shil/Mohan-Dola/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohan-shil/Mohan-Dola.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "script.js",
   "scripts": {
     "dev": "node server.cjs"
   }
