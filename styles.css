@@ -84,10 +84,10 @@ h2 { margin: 0; font: 500 clamp(42px, 5.2vw, 68px)/1.05 "Playfair Display", seri
 .countdown-inner { text-align: center; }
 .countdown .section-label { color: rgba(251,250,246,.7); }
 .timer { display: flex; justify-content: center; align-items: center; gap: clamp(18px, 5vw, 65px); margin-top: 40px; }
-.timer div { display: flex; flex-direction: column; gap: 8px; }
+.timer-unit { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 76px; }
 .timer strong { font: 500 clamp(43px, 6vw, 72px) "Playfair Display", serif; }
 .timer span { color: rgba(251,250,246,.72); font-size: 10px; letter-spacing: .17em; text-transform: uppercase; }
-.timer i { width: 1px; height: 45px; background: rgba(251,250,246,.35); }
+.timer-unit i { position: absolute; top: 13px; right: clamp(-34px, -2.5vw, -18px); width: 1px; height: 45px; background: rgba(251,250,246,.35); }
 .rsvp { background: var(--cream); }
 .rsvp-inner { display: grid; grid-template-columns: 1fr 1.45fr; column-gap: 60px; }
 .rsvp h2 { grid-column: 2; }
@@ -135,9 +135,10 @@ form .button { margin-top: 8px; }
   .rsvp .body-copy { margin-top: 27px; }
   .rsvp .button { margin-top: 30px; }
   .timer { gap: 12px; }
+  .timer-unit { min-width: 42px; }
   .timer strong { font-size: 32px; }
   .timer span { font-size: 8px; letter-spacing: .1em; }
-  .timer i { height: 28px; }
+  .timer-unit i { right: -8px; height: 28px; }
   .footer-inner { min-height: 125px; flex-wrap: wrap; padding: 25px 0; gap: 12px; }
   .footer p { order: 3; width: 100%; }
   .modal-panel { padding: 35px 25px; }
