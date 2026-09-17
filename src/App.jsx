@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const weddingDate = new Date("2026-10-18T10:30:00+05:30");
+const weddingDate = new Date("2027-10-13T10:30:00+06:00");
 
 function useReveal() {
   const ref = useRef(null);
@@ -65,7 +65,7 @@ function Hero() {
       <p className="eyebrow">Together with their families</p>
       <h1>Mohan <em>&amp;</em> Diya</h1>
       <p className="hero-copy">invite you to celebrate the beginning<br />of their forever.</p>
-      <div className="hero-date"><span>Sunday</span><i /><span>18 October 2026</span><i /><span>Jaipur, Rajasthan</span></div>
+      <div className="hero-date"><span>11 &amp; 13 October 2027</span><i /><span>Chattogram</span></div>
       <Button href="#details" light>Explore the invitation <span>↓</span></Button>
     </div>
     <div className="scroll-note">Scroll to discover <span>↓</span></div>
@@ -82,12 +82,12 @@ function Story() {
 }
 
 const events = [
-  { number: "01", type: "The ceremony", name: "Phere", time: "10:30", period: "in the morning", place: <>Samode Haveli<br />Jaipur, Rajasthan</>, map: "Samode+Haveli+Jaipur" },
-  { number: "02", type: "The celebration", name: "Reception", time: "7:00", period: "in the evening", place: <>The Leela Palace<br />Jaipur, Rajasthan</>, map: "The+Leela+Palace+Jaipur", featured: true }
+  { number: "01", type: "11 October 2027", name: "Engagement", time: "Shoronika", period: "Chattogram", place: <>Shoronika<br />Chattogram</>, map: "https://maps.app.goo.gl/n48wkc3DhTEyxQpX7" },
+  { number: "02", type: "13 October 2027", name: "Wedding", time: "Shoronika", period: "Chattogram", place: <>Shoronika<br />Chattogram</>, map: "https://maps.app.goo.gl/n48wkc3DhTEyxQpX7", featured: true }
 ];
 
 function EventCard({ event }) {
-  return <article className={`event-card ${event.featured ? "featured-event" : ""}`}><p className="event-number">{event.number}</p><p className="event-type">{event.type}</p><h3>{event.name}</h3><p className="event-time">{event.time} <span>{event.period}</span></p><p className="event-place">{event.place}</p><a className="text-link" href={`https://maps.google.com/?q=${event.map}`} target="_blank" rel="noreferrer">View on map <span>↗</span></a></article>;
+  return <article className={`event-card ${event.featured ? "featured-event" : ""}`}><p className="event-number">{event.number}</p><p className="event-type">{event.type}</p><h3>{event.name}</h3><p className="event-time">{event.time} <span>{event.period}</span></p><p className="event-place">{event.place}</p><a className="text-link" href={event.map} target="_blank" rel="noreferrer">View on map <span>↗</span></a></article>;
 }
 
 function Details() {
@@ -105,13 +105,13 @@ function Countdown() {
 function RsvpModal({ onClose }) {
   const [message, setMessage] = useState("");
   const submit = (event) => { event.preventDefault(); const data = new FormData(event.currentTarget); setMessage(`Thank you, ${data.get("name")}. We cannot wait to celebrate with you!`); event.currentTarget.reset(); };
-  return <div className="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onMouseDown={(event) => event.target === event.currentTarget && onClose()}><div className="modal-panel"><button className="modal-close" type="button" onClick={onClose} aria-label="Close RSVP form">×</button><p className="section-label">RSVP / 2026</p><h2 id="modalTitle">Will we see<br /><em>you there?</em></h2><form onSubmit={submit}><label>Your name<input required type="text" name="name" placeholder="Aarav Sharma" /></label><label>Will you join us?<select name="attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select></label><Button>Send RSVP <span>→</span></Button></form><p className="form-message" aria-live="polite">{message}</p></div></div>;
+  return <div className="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onMouseDown={(event) => event.target === event.currentTarget && onClose()}><div className="modal-panel"><button className="modal-close" type="button" onClick={onClose} aria-label="Close RSVP form">×</button><p className="section-label">RSVP / 2027</p><h2 id="modalTitle">Will we see<br /><em>you there?</em></h2><form onSubmit={submit}><label>Your name<input required type="text" name="name" placeholder="Aarav Sharma" /></label><label>Will you join us?<select name="attendance"><option>Joyfully accepts</option><option>Regretfully declines</option></select></label><Button>Send RSVP <span>→</span></Button></form><p className="form-message" aria-live="polite">{message}</p></div></div>;
 }
 
 function App() {
   const [isRsvpOpen, setRsvpOpen] = useState(false);
   useEffect(() => { document.body.style.overflow = isRsvpOpen ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [isRsvpOpen]);
-  return <><main><Hero /><Story /><Details /><Countdown /><section className="rsvp section-pad" id="rsvp"><div className="wrap rsvp-inner"><p className="section-label">03 / We hope you can make it</p><h2>Come for the love,<br /><em>stay for the dancing.</em></h2><p className="body-copy">Your presence is the only present we need. Please let us know if you’ll be joining us by 01 September 2026.</p><Button onClick={() => setRsvpOpen(true)}>Confirm your attendance <span>→</span></Button></div></section><footer className="footer"><div className="wrap footer-inner"><Monogram /><p>Made with love for our favourite people.</p><a href="#top" aria-label="Back to top">↑</a></div></footer></main>{isRsvpOpen && <RsvpModal onClose={() => setRsvpOpen(false)} />}</>;
+  return <><main><Hero /><Story /><Details /><Countdown /><section className="rsvp section-pad" id="rsvp"><div className="wrap rsvp-inner"><p className="section-label">03 / We hope you can make it</p><h2>Come for the love,<br /><em>stay for the dancing.</em></h2><p className="body-copy">Your presence is the only present we need. Please let us know if you’ll be joining us by 01 September 2027.</p><Button onClick={() => setRsvpOpen(true)}>Confirm your attendance <span>→</span></Button></div></section><footer className="footer"><div className="wrap footer-inner"><Monogram /><p>Made with love for our favourite people.</p><a href="#top" aria-label="Back to top">↑</a></div></footer></main>{isRsvpOpen && <RsvpModal onClose={() => setRsvpOpen(false)} />}</>;
 }
 
 export default App;
