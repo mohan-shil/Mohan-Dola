@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import StoryPage from "./StoryPage.jsx";
 
 const weddingDate = new Date("2027-10-13T10:30:00+06:00");
 
@@ -58,8 +59,8 @@ function Hero() {
     <div className="hero-orbit orbit-two" aria-hidden="true" />
     <div className="hero-bloom" aria-hidden="true"><span /><span /><span /></div>
     <nav className="nav wrap" aria-label="Main navigation">
-      <a href="#top" aria-label="Mohan and Diya home"><Monogram /></a>
-      <div className="nav-links"><a href="#story">Our story</a><a href="#details">The day</a><a href="#rsvp">RSVP</a></div>
+      <a href="/" aria-label="Mohan and Diya home"><Monogram /></a>
+      <div className="nav-links"><a href="/story">Our story</a><a href="#details">The day</a><a href="#rsvp">RSVP</a></div>
     </nav>
     <div className="hero-content wrap">
       <p className="eyebrow">Together with their families</p>
@@ -111,6 +112,7 @@ function RsvpModal({ onClose }) {
 function App() {
   const [isRsvpOpen, setRsvpOpen] = useState(false);
   useEffect(() => { document.body.style.overflow = isRsvpOpen ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [isRsvpOpen]);
+  if (window.location.pathname === "/story") return <StoryPage />;
   return <><main><Hero /><Story /><Details /><Countdown /><section className="rsvp section-pad" id="rsvp"><div className="wrap rsvp-inner"><p className="section-label">03 / We hope you can make it</p><h2>Come for the love,<br /><em>stay for the dancing.</em></h2><p className="body-copy">Your presence is the only present we need. Please let us know if you’ll be joining us by 01 September 2027.</p><Button onClick={() => setRsvpOpen(true)}>Confirm your attendance <span>→</span></Button></div></section><footer className="footer"><div className="wrap footer-inner"><Monogram /><p>Made with love for our favourite people.</p><a href="#top" aria-label="Back to top">↑</a></div></footer></main>{isRsvpOpen && <RsvpModal onClose={() => setRsvpOpen(false)} />}</>;
 }
 
