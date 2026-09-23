@@ -1,6 +1,6 @@
 # 💍 Mohan × Diya
 
-> `LOVE_PROTOCOL v1.0`  
+> `LOVE_PROTOCOL v1.0.0`  
 > `SYSTEM STATUS: TWO HEARTS DETECTED ❤️`
 
 ---
